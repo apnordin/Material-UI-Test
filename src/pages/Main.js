@@ -18,13 +18,31 @@ const useStyles = makeStyles((theme) => ({
 export default function Main () {
     const classes = useStyles();
 
-    const [btnColor, setBtnColor]= useState("primary");
+    const [btnColor, setBtnColor] = useState("primary");
+    const [btnColorSolo, setBtnColorSolo] = useState("primary");
+    const [btnColorSolo1, setBtnColorSolo1] = useState("primary");
 
     const changeColor = () => {
         if (btnColor === "primary") {
             setBtnColor("secondary")
         } else {
             setBtnColor("primary")
+        }
+    }
+
+    const changeColorSolo = () => {
+        if (btnColorSolo === "primary") {
+            setBtnColorSolo("secondary")
+        } else {
+            setBtnColorSolo("primary")
+        }
+    }
+
+    const changeColorSolo1 = () => {
+        if (btnColor === "primary") {
+            setBtnColorSolo1("secondary")
+        } else {
+            setBtnColorSolo1("primary")
         }
     }
 
@@ -38,22 +56,30 @@ export default function Main () {
                 <Grid item xs={6}>
                     <Paper className={classes.paper}>
                         <Button variant="contained" color={btnColor} onClick={changeColor}>
-                        Change colors!
+                        Change colors (both buttons)!
                         </Button>
                     </Paper>
                 </Grid>
                 <Grid item xs={6}>
                     <Paper className={classes.paper}>
                         <Button variant="contained" color={btnColor} onClick={changeColor}>
-                        Change colors!
+                        Change colors (both buttons)!
                         </Button>
                     </Paper>
                 </Grid>
                 <Grid item xs={4}>
-                    <Paper className={classes.paper}>xs=4</Paper>
+                    <Paper className={classes.paper}>
+                        <Button variant="contained" color={btnColorSolo} onClick={changeColorSolo}>
+                        Change colors (just this button)!
+                        </Button>
+                    </Paper>
                 </Grid>
                 <Grid item xs={4}>
-                    <Paper className={classes.paper}>xs=4</Paper>
+                    <Paper className={classes.paper}>
+                        <Button variant="contained" color={btnColorSolo1} onClick={changeColorSolo1}>
+                        See if you can how identify when this button can change
+                        </Button>
+                    </Paper>
                 </Grid>
                 <Grid item xs={4}>
                     <Paper className={classes.paper}>xs=4</Paper>
